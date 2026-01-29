@@ -1,6 +1,6 @@
 # train.py
 import config
-from keras.callbacks import EarlyStopping
+from keras.callbacks import EarlyStopping, ReduceLROnPlateau
 from keras.optimizers import Adam
 
 
@@ -16,9 +16,18 @@ def compile_model(model):
 
 
 def train_model(model, x_train, y_train, batch_size, epochs):
+    
+    lr_scheduler = ReduceLROnPlateau(
+        monitor="val_loss",
+        factor=0.5,        # halve LR
+        patience=3,        # wait a bit before reducing
+        min_lr=1e-5,
+        verbose=1
+    )
+    
     early_stopping = EarlyStopping(
         monitor="val_loss",
-        patience=5,
+        patience=10,      # increased to allow LR Scheduler to take effect
         restore_best_weights=True
     )
 
@@ -28,7 +37,7 @@ def train_model(model, x_train, y_train, batch_size, epochs):
         batch_size=batch_size,
         epochs=epochs,
         validation_split=0.1,
-        callbacks=[early_stopping]
+        callbacks=[early_stopping, lr_scheduler]
     )
     return history
 
