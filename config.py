@@ -1,7 +1,5 @@
 # config.py
 
-LOAD_SAVED_MODEL = False
-
 # Model parameters
 RANDOM_SEED = 42
 BATCH_SIZE = 64

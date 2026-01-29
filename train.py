@@ -24,9 +24,7 @@ def train_model(model, x_train, y_train, batch_size, epochs):
         batch_size=batch_size,
         epochs=epochs,
         validation_split=0.1,
-        callbacks=[early_stopping]  # ← REQUIRED
     )
-    model.save("models/model.keras")
     return history
 
 def evaluate_model(model, x_test, y_test):
