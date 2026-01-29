@@ -32,8 +32,18 @@ def build_model():
         MaxPooling2D(pool_size=(2, 2)),
         Dropout(0.15),
 
+        Conv2D(128, kernel_size=(3, 3), padding="same", activation="relu"),
+        BatchNormalization(),
+        MaxPooling2D(pool_size=(2, 2)),
+        Dropout(0.2),
+
+        Conv2D(256, kernel_size=(3, 3), padding="same", activation="relu"),
+        BatchNormalization(),
+        MaxPooling2D(pool_size=(2, 2)),
+        Dropout(0.30),
+
         GlobalAveragePooling2D(),
-        Dense(128, activation="relu"),
+        Dense(64, activation="relu"),
         Dropout(0.3),
         Dense(NUM_CLASSES, activation="softmax"),
     ])
