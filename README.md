@@ -38,8 +38,8 @@ Each image belongs to exactly one class.
 
 ## Structure
 
+```text
 project-root/
-│
 ├── presentation/        # slides and visuals
 ├── main.ipynb           # main experimentation notebook
 ├── config.py            # configuration and constants
@@ -48,8 +48,10 @@ project-root/
 ├── train.py             # training logic & callbacks
 ├── metrics.py           # evaluation and plots
 └── README.md
+```
 
 The project is organized this way to keep experiments clean and easy to extend.
+
 
 ---
 
