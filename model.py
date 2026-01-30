@@ -2,7 +2,7 @@
 from keras.models import Sequential
 from keras.layers import (
      Input, Conv2D, MaxPooling2D, Dense,
-    RandomFlip, RandomTranslation, RandomRotation, RandomZoom,
+    RandomFlip, RandomTranslation, RandomRotation, RandomZoom, 
     BatchNormalization, Dropout, GlobalAveragePooling2D)
 
 from config import INPUT_SHAPE, NUM_CLASSES
@@ -43,12 +43,12 @@ def build_model():
         MaxPooling2D(pool_size=(2, 2)),
         Dropout(0.2),
 
-        Conv2D(256, kernel_size=(3, 3), padding="same", activation="relu"),
+        Conv2D(512, kernel_size=(3, 3), padding="same", activation="relu"),
         BatchNormalization(),
-        Conv2D(256, kernel_size=(3, 3), padding="same", activation="relu"),
+        Conv2D(512, kernel_size=(3, 3), padding="same", activation="relu"),
         BatchNormalization(),
         MaxPooling2D(pool_size=(2, 2)),
-        Dropout(0.30),
+        Dropout(0.35),
 
         GlobalAveragePooling2D(),
         Dense(128, activation="relu"),
