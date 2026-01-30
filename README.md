@@ -4,21 +4,20 @@
 
 ---
 
-## Project Overview
+## Overview
 
-This project focuses on designing, training, and evaluating a **Convolutional Neural Network (CNN)** to accurately classify images from the **CIFAR-10** dataset.  
-The work follows an **iterative modeling approach**, starting from a baseline CNN and progressively improving performance through architectural and training refinements.
+This project explores *Convolutional Neural Networks (CNNs)* using the *CIFAR-10* dataset. The goal was to build and improve image classification models step by step, starting from a simple baseline CNN and gradually improving performance through architectural changes and training tweaks.
 
-The goal is not only high accuracy, but also a clear understanding of how design choices impact model behavior.
+The focus is not just accuracy, but understanding why certain changes help or hurt the model.
 
 ---
 
 ## Dataset
 
-**CIFAR-10** is a standard benchmark dataset for image classification tasks. It contains:
+*CIFAR-10* contains:
 
-- **60,000 color images** (32×32 pixels)
-- **10 classes**
+- 60,000 color images (32×32 pixels)
+- 10 classes
 - 50,000 training images
 - 10,000 test images
 
@@ -26,37 +25,35 @@ Each image belongs to exactly one class.
 
 ---
 
-## Objectives
+## What We Did
 
-- Build a CNN from scratch using **TensorFlow / Keras**
-- Develop a clean and reusable training pipeline
-- Iteratively improve model performance
-- Evaluate generalization on unseen test data
-- Document modeling decisions and results
+- Loaded and normalized the data
+- Built a baseline CNN using *TensorFlow / Keras*
+- Kept experiments clean and easy to extend
+- We kept tweaking the model step by step to boost accuracy
+- Tested on unseen data
+-  tracked every change and its impact
 
 ---
 
-## Project Structure
+## Structure
 
 project-root/
 │
-├── presentation/
-│ └── (slides and visual material)
-│
-├── main.ipynb # main experimentation notebook
-├── config.py # global configuration and constants
-├── data.py # dataset loading and preprocessing
-├── model.py # CNN architecture definitions
-├── train.py # training loop and callbacks
-├── metrics.py # evaluation metrics and plots
-│
+├── presentation/        # slides and visuals
+├── main.ipynb           # main experimentation notebook
+├── config.py            # configuration and constants
+├── data.py              # data loading & preprocessing
+├── model.py             # CNN architectures
+├── train.py             # training logic & callbacks
+├── metrics.py           # evaluation and plots
 └── README.md
 
-This modular structure separates concerns and improves readability, reuse, and experimentation speed.
+The project is organized this way to keep experiments clean and easy to extend.
 
 ---
 
-## Project Members
+## Team
 
 - Edwin Santiago
 - Marcos Sousa
@@ -66,62 +63,17 @@ This modular structure separates concerns and improves readability, reuse, and e
 
 ## Deliverables
 
-- Trained CNN model for CIFAR-10 classification
-- Evaluation metrics (accuracy, loss, confusion matrix)
-- Experimentation notebook with results and analysis
-- Clean, modular training pipeline
-- Group Presentation (.pptx)
+We delivered a trained model, evaluation metrics, an experiment notebook, and a group presentation
 
 ---
 
 ## Methodology
 
-1. Data loading and normalization
-2. Baseline CNN implementation
-3. Iterative architectural improvements
-4. Hyperparameter tuning
-5. Performance evaluation on test data
-
----
-
-## Tech Stack
-
-- Python
-- TensorFlow / Keras
-- NumPy
-- Matplotlib
+We started with a baseline CNN, iteratively improved the architecture, tuned hyperparameters, and tested performance.
 
 ---
 
 ## Results
-
-_(To be updated)_  
-Final model performance and evaluation metrics will be documented here.
-
----
-
-## Reproducibility
-
-- Fixed random seeds for deterministic results
-- All dependencies listed in `requirements.txt`
-- Modular pipeline for repeatable experiments
-
----
-
-## Future Improvements
-
-- Data augmentation
-- Transfer learning (e.g. MobileNet, EfficientNet)
-- Regularization techniques (Dropout, BatchNorm)
-- Automated hyperparameter tuning
-
----
-
-## Key Takeaways
-
-- CNN performance is highly sensitive to architectural choices
-- Iterative experimentation leads to more robust models
-- Clean project structure improves research velocity
-
-Note: Jupyter notebook outputs are stripped automatically during commits for repository hygiene. This does not affect execution or evaluation.
+  
+Final accuracy, training curves, and confusion matrices are documented in main.ipynb. The final model showed steady improvement and generalization.
 
